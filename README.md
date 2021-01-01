@@ -51,4 +51,14 @@ Download terraform libvirt provider
   
   terraform init
   
-  Write main.tf
+  Write main.tf, cloud_init.cfg, network_config.cfg. Ensure you update ssh public key in cloud_init.cfg.
+  
+  Do terraform init again and followed by terraform apply
+  
+  Verify vm creation with 'virsh list' and dhcp with 'virsh net-dhcp-leases vm_network'.Get ip address and do 'ssh developer@<ip>' to login to the vm.
+  
+  Finally do 'terraform destroy' to cleanup.
+  
+  Enjoy!
+  
+  
